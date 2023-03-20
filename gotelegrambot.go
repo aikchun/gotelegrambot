@@ -91,7 +91,7 @@ func (bot *Bot) EditMessageText(d EditMessageTextPayload) (resp *http.Response, 
 	return r, err
 }
 
-func (bot *Bot) setUpdateHandler(s string, ud UpdateHandler) {
+func (bot *Bot) SetUpdateHandler(s string, ud UpdateHandler) {
 	bot.Handlers[s] = ud
 	bot.Handlers[fmt.Sprintf("%s@%s", s, bot.Username)] = ud
 }
