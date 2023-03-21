@@ -1,11 +1,5 @@
 package gotelegrambot
 
-type Bot struct {
-	Token    string
-	Username string
-	Handlers map[string]func(*Bot, *Update, []string)
-}
-
 type Update struct {
 	UpdateID          int64          `json:"update_id"`
 	Message           Message        `json:"message,omitempty"`
@@ -94,5 +88,3 @@ type InlineKeyboardButton struct {
 	SwitchInlineQuery            string `json:"switch_inline_query,omitempty"`
 	SwitchInlineQueryCurrentChat string `json:"switch_inline_query_current_chat,omitempty"`
 }
-
-type UpdateHandler func(*Bot, *Update, []string)
